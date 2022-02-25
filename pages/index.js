@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
-export default function Home(props) {
-  const name = 'dummy';
+export default function Home({ data }) {
+  const { name } = data;
   return (
     <div className={styles.container}>
       <Head>
@@ -65,4 +65,14 @@ export default function Home(props) {
       </footer>
     </div>
   );
+}
+
+// This gets called on every request
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch('http://localhost:3000/api/hello');
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return { props: { data } };
 }

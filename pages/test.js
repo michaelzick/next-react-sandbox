@@ -1,4 +1,4 @@
-function Page({ data }) {
+function TestPage({ data }) {
   console.log(data);
   return (
     <>
@@ -17,4 +17,4 @@ export async function getServerSideProps() {
   return { props: { data } };
 }
 
-export default Page;
+export default TestPage;
