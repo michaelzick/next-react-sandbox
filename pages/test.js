@@ -1,8 +1,10 @@
+import Link from 'next/link';
+
 function TestPage({ data }) {
   console.log(data);
   return (
     <>
-      <h1>This is the test page.</h1>
+      <Link href='/'>Go back home.</Link>
     </>
   );
 }
