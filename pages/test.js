@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import { NavLink } from '../src/StyledComponents';
 
 function TestPage({ data }) {
   console.log(data);
   return (
-    <>
-      <Link href='/'>Go back home.</Link>
-    </>
+    <Link href='/' passHref>
+      <NavLink>Go back home.</NavLink>
+    </Link>
   );
 }
 
