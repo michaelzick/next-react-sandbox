@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Use Node.js 20.9 or later and install dependencies with Yarn Classic:
+
+```bash
+yarn install --frozen-lockfile
+```
+
+Start the development server:
 
 ```bash
 npm run dev
