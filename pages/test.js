@@ -1,23 +1,13 @@
-import Link from 'next/link';
 import { NavLink } from '../src/StyledComponents';
+import { hello } from '../src/hello';
 
 function TestPage({ data }) {
   console.log(data);
-  return (
-    <Link href='/' passHref>
-      <NavLink>Go back home.</NavLink>
-    </Link>
-  );
+  return <NavLink href='/'>Go back home.</NavLink>;
 }
 
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch('http://localhost:3000/api/hello');
-  const data = await res.json();
-
-  // Pass data to the page via props
-  return { props: { data } };
+export function getServerSideProps() {
+  return { props: { data: hello } };
 }
 
 export default TestPage;

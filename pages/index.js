@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { hello } from '../src/hello';
 import styles from '../styles/Home.module.css';
 
 export default function Home({ data }) {
@@ -67,13 +68,6 @@ export default function Home({ data }) {
   );
 }
 
-// This gets called on every request
-export async function getStaticProps() {
-  // Fetch data from external API
-  const res = await fetch('http://localhost:3000/api/hello');
-  const data = await res.json();
-  console.log('called from getStaticProps');
-
-  // Pass data to the page via props
-  return { props: { data } };
+export function getStaticProps() {
+  return { props: { data: hello } };
 }
